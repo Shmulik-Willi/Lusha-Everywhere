@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lusha Everywhere Settings</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 400px;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.98);
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 25px;
+      text-align: center;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .header .subtitle {
+      font-size: 14px;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+
+    .content {
+      padding: 25px;
+    }
+
+    .status {
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      text-align: center;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .status::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .status.success::before {
+      background: #28a745;
+    }
+
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .status.error::before {
+      background: #dc3545;
+    }
+
+    .status.info {
+      background: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+
+    .status.info::before {
+      background: #17a2b8;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #444;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      font-family: 'Courier New', monospace;
+      background: #fafafa;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 5px;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+      margin: 25px 0;
+    }
+
+    .instructions {
+      padding: 20px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 12px;
+      border: 1px solid #dee2e6;
+    }
+
+    .instructions h3 {
+      font-size: 15px;
+      margin-bottom: 15px;
+      color: #667eea;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .instructions h3::before {
+      content: '📖';
+      font-size: 18px;
+    }
+
+    .instructions ol {
+      margin-left: 0;
+      padding-left: 0;
+      list-style: none;
+      counter-reset: step-counter;
+    }
+
+    .instructions li {
+      margin-bottom: 12px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #555;
+      padding-left: 32px;
+      position: relative;
+      counter-increment: step-counter;
+    }
+
+    .instructions li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .instructions li strong {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .feature-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .badge {
+      padding: 6px 12px;
+      background: white;
+      border: 1px solid #dee2e6;
+      border-radius: 20px;
+      font-size: 11px;
+      color: #667eea;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .secondary-btn {
+      background: white;
+      color: #667eea;
+      border: 2px solid #667eea;
+      margin-top: 10px;
+    }
+
+    .secondary-btn:hover {
+      background: #f8f9ff;
+      border-color: #764ba2;
+      color: #764ba2;
+    }
+
+    .stats-container {
+      background: white;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      animation: slideDown 0.3s ease;
+    }
+
+    .stats-divider {
+      height: 1px;
+      background: #dee2e6;
+      margin: 20px 0;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stats-header {
+      background: #f8f9fa;
+      color: #333;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .stats-header h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+      color: #333;
+    }
+
+    .close-btn {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      color: #666;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .close-btn:hover {
+      color: #333;
+      transform: none;
+    }
+
+    .stats-content {
+      padding: 16px;
+    }
+
+    .stats-loading {
+      text-align: center;
+      color: #667eea;
+      font-weight: 500;
+      padding: 20px;
+    }
+
+    .stats-error {
+      background: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .stats-modern {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .balance-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .balance-icon {
+      font-size: 18px;
+    }
+
+    .balance-label {
+      color: #666;
+      font-weight: 500;
+      margin-right: auto;
+    }
+
+    .balance-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .credits-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .usage-text {
+      font-size: 13px;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(to right, #e8eaf6 0%, #c5cae9 100%);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(to right, #7c4dff 0%, #5e35b1 100%);
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Lusha Everywhere</h1>
+      <p class="subtitle">Person & Company enrichment with one click</p>
+    </div>
+
+    <div class="content">
+      <div id="status" class="status hidden"></div>
+
+      <div class="form-group">
+        <label for="apiKey">🔑 Lusha API Key</label>
+        <input type="text" id="apiKey" placeholder="Enter your API Key here" />
+        <button id="saveBtn">💾 Save API Key</button>
+      </div>
+
+      <div class="stats-divider"></div>
+
+      <div style="margin-bottom: 15px;">
+        <button id="viewStatsBtn" class="secondary-btn">📊 View Usage Stats</button>
+      </div>
+
+      <!-- Usage Stats Display -->
+      <div id="statsContainer" class="stats-container hidden">
+        <div class="stats-header">
+          <h3>📊 Your Usage Stats</h3>
+          <button id="closeStatsBtn" class="close-btn">✕</button>
+        </div>
+        <div id="statsContent" class="stats-content">
+          <div class="stats-loading">Loading stats...</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="instructions">
+        <h3>How to use</h3>
+        <ol>
+          <li>Enter your <strong>API Key</strong> from Lusha above</li>
+          <li>Click <strong>"Save API Key"</strong></li>
+          <li>Go to any website and <strong>select a person's name</strong> or <strong>company name</strong></li>
+          <li>Click the <strong>Person</strong> or <strong>Company</strong> button that appears</li>
+          <li>View enriched data: <strong>email, phone, LinkedIn, company info</strong></li>
+        </ol>
+
+        <div class="feature-badges">
+          <span class="badge">✉️ Email</span>
+          <span class="badge">📞 Phone</span>
+          <span class="badge">💼 LinkedIn</span>
+          <span class="badge">💬 WhatsApp</span>
+          <span class="badge">🏢 Company Info</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

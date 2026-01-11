@@ -1,0 +1,691 @@
+/* content.css - Styles for buttons and popups that appear on pages */
+
+/* Selection button */
+/* Selection Button Container (Split Button) */
+.lusha-selection-container {
+  position: fixed;
+  z-index: 2147483647;
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 4px;
+  border: 1px solid #e2e8f0;
+  animation: lusha-fade-in 0.2s ease-out;
+}
+
+
+.lusha-selection-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 6px;
+  transition: all 0.2s;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Person Button - Lighter Purple */
+#lusha-btn-person {
+  color: #6c5ce7;
+  background: rgba(108, 92, 231, 0.1);
+}
+
+#lusha-btn-person:hover {
+  background: #6c5ce7;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Company Button - Darker Purple */
+#lusha-btn-company {
+  color: #4834d4;
+  background: rgba(72, 52, 212, 0.1);
+}
+
+#lusha-btn-company:hover {
+  background: #4834d4;
+  color: white;
+  transform: scale(1.05);
+}
+
+.lusha-selection-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.lusha-divider {
+  width: 1px;
+  background: #e2e8f0;
+  margin: 4px 2px;
+}
+
+.lusha-required {
+  color: #e53e3e;
+  margin-left: 2px;
+}
+
+.lusha-selection-button:active {
+  transform: translateY(0) scale(1);
+}
+
+.lusha-selection-button svg {
+  flex-shrink: 0;
+}
+
+/* Result popup */
+.lusha-result-popup {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  position: fixed;
+  min-width: 320px;
+  max-width: 400px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  z-index: 2147483647;
+  animation: lushaSlideUp 0.3s ease;
+  overflow: hidden;
+}
+
+/* Popup header */
+.lusha-result-header {
+  all: initial;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  flex-shrink: 0;
+  /* Header stays fixed */
+}
+
+.lusha-result-header.error {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.lusha-result-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.lusha-close-button {
+  all: initial;
+  font-family: inherit;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lusha-close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Popup content */
+.lusha-result-content {
+  all: initial;
+  font-family: inherit;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #333;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(102, 126, 234, 0.3) transparent;
+}
+
+.lusha-result-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lusha-result-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lusha-result-content::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 3px;
+}
+
+.lusha-result-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.5);
+}
+
+.lusha-result-item {
+  all: initial;
+  font-family: inherit;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.lusha-result-label {
+  all: initial;
+  font-family: inherit;
+  font-weight: 600;
+  color: #667eea;
+  font-size: 13px;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.lusha-result-value {
+  all: initial;
+  font-family: inherit;
+  color: #333;
+  font-size: 13px;
+  word-break: break-word;
+  flex: 1;
+}
+
+.lusha-link {
+  all: initial;
+  font-family: inherit;
+  color: #667eea;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.lusha-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Phone type badge */
+.lusha-phone-type {
+  all: initial;
+  font-family: inherit;
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: #e8f0fe;
+  color: #1967d2;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 12px;
+  vertical-align: middle;
+}
+
+/* Error message styling */
+.error-message {
+  all: initial;
+  font-family: inherit;
+  display: block;
+  color: #721c24;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+/* Footer */
+.lusha-result-footer {
+  all: initial;
+  font-family: inherit;
+  padding: 10px 14px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.lusha-powered {
+  all: initial;
+  font-family: inherit;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Error and no-data messages */
+.error-message,
+.no-data-message {
+  all: initial;
+  font-family: inherit;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.error-message {
+  color: #e74c3c;
+}
+
+/* Loading animation */
+.lusha-result-popup.loading {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-width: 200px;
+}
+
+/* Edit Form Styles */
+.lusha-edit-form {
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+
+.lusha-input-group {
+  margin-bottom: 8px;
+}
+
+.lusha-input-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 3px;
+}
+
+.lusha-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #2d3748;
+  box-sizing: border-box;
+}
+
+.lusha-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.lusha-toggle-group {
+  display: flex;
+  background: #e2e8f0;
+  border-radius: 4px;
+  padding: 2px;
+  margin-bottom: 8px;
+}
+
+.lusha-toggle-btn {
+  flex: 1;
+  padding: 6px;
+  border: none;
+  background: transparent;
+  color: #718096;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.lusha-toggle-btn.active {
+  background: #fff;
+  color: #2b6cb0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.lusha-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.lusha-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.lusha-btn-secondary {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.lusha-btn-secondary:hover {
+  background: #cbd5e0;
+}
+
+.lusha-btn-primary {
+  background: #5a67d8;
+  color: #fff;
+}
+
+.lusha-btn-primary:hover {
+  background: #4c51bf;
+}
+
+.lusha-refine-btn {
+  background: none;
+  border: 1px solid #e2e8f0;
+  color: #718096;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.lusha-refine-btn:hover {
+  background: #f7fafc;
+  color: #4a5568;
+  border-color: #cbd5e0;
+}
+
+/* Action Buttons (Email/WhatsApp) */
+.lusha-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  color: #718096;
+  transition: all 0.2s;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.lusha-action-btn:hover {
+  background: #e2e8f0;
+  color: #4a5568;
+  transform: scale(1.1);
+}
+
+.lusha-whatsapp-btn {
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.1);
+  border-color: rgba(37, 211, 102, 0.2);
+}
+
+.lusha-whatsapp-btn:hover {
+  background: #25D366;
+  color: white;
+  border-color: #25D366;
+}
+
+.lusha-read-more:hover {
+  text-decoration: underline !important;
+  color: #5a4ad1 !important;
+}
+
+.lusha-result-popup.loading p {
+  all: initial;
+  font-family: inherit;
+  margin: 0;
+  font-size: 14px;
+  color: #667eea;
+  font-weight: 600;
+  text-align: center;
+}
+
+.lusha-loading-spinner {
+  all: initial;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: lushaRotate 1s linear infinite;
+}
+
+/* Animations */
+@keyframes lushaFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lushaSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lushaRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive for small screens */
+@media (max-width: 480px) {
+  .lusha-result-popup {
+    min-width: 280px;
+    max-width: calc(100vw - 40px);
+  }
+
+  .lusha-selection-button {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .lusha-result-popup {
+    background: #2d2d2d;
+  }
+
+  .lusha-result-content {
+    color: #e0e0e0;
+  }
+
+  .lusha-result-value {
+    color: #e0e0e0;
+  }
+
+  .lusha-result-footer {
+    background: #1a1a1a;
+    border-top-color: #404040;
+  }
+
+  .lusha-powered {
+    color: #a0a0a0;
+  }
+
+  .no-data-message {
+    color: #b0b0b0;
+  }
+
+  .lusha-signals-section {
+    background: #1e1e1e;
+    border-color: #404040;
+  }
+
+  .lusha-signals-header {
+    background: #252525;
+    border-bottom-color: #404040;
+  }
+
+  .lusha-signal-item {
+    background: #252525;
+    border-color: #404040;
+  }
+
+  .lusha-signal-item:hover {
+    background: #2a2a2a;
+  }
+
+  .lusha-signal-description {
+    color: #b0b0b0;
+  }
+
+  .lusha-signal-date {
+    color: #888;
+  }
+
+  .lusha-signal-link {
+    color: #64b5f6 !important;
+  }
+
+  .lusha-signal-link:hover {
+    color: #90caf9 !important;
+  }
+}
+
+/* Signals Section Styles */
+.lusha-signals-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.lusha-signals-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.lusha-signals-icon {
+  font-size: 18px;
+}
+
+.lusha-signals-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: #333;
+  flex: 1;
+}
+
+.lusha-signals-count {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.lusha-signals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lusha-signal-item {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.lusha-signal-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.lusha-signal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.lusha-signal-emoji {
+  font-size: 16px;
+}
+
+.lusha-signal-title {
+  font-weight: 600;
+  font-size: 13px;
+  color: #333;
+  flex: 1;
+}
+
+.lusha-signal-date {
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.lusha-signal-description {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 6px;
+  margin-left: 24px;
+}
+
+.lusha-signal-link {
+  display: inline-block;
+  margin-top: 8px;
+  margin-left: 24px;
+  font-size: 12px;
+  color: #667eea !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.lusha-signal-link:hover {
+  color: #764ba2 !important;
+  text-decoration: underline !important;
+}
