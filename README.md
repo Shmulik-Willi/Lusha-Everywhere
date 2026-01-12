@@ -53,8 +53,6 @@ Created by Shmulik Willinger
 
 ## Installation
 
-### Option 1: Load Unpacked Extension (For Development)
-
 1. **Clone or download this repository**
    ```bash
    git clone https://github.com/yourusername/lusha-everywhere.git
@@ -72,13 +70,11 @@ Created by Shmulik Willinger
    - Click "Load unpacked"
    - Select the `chrome-extension` folder from this project
 
+   ![Load Extension](docs/screenshot-load-extension.png)
+
 5. **Pin the extension** (optional)
    - Click the puzzle icon in Chrome toolbar
    - Find "Lusha Everywhere" and click the pin icon
-
-### Option 2: Install from Chrome Web Store (Coming Soon)
-
-*This extension will be available on the Chrome Web Store soon.*
 
 ---
 
@@ -86,8 +82,8 @@ Created by Shmulik Willinger
 
 ### 1. Get Your Lusha API Key
 
-1. Go to [Lusha Dashboard](https://www.lusha.com/dashboard/)
-2. Navigate to API settings
+1. Go to [Lusha API Documentation](https://docs.lusha.com/guides)
+2. Navigate to API settings in your dashboard
 3. Copy your API key
 
 ### 2. Configure the Extension
