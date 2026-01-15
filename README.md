@@ -113,6 +113,8 @@ Created by Shmulik Willinger
 
 2. **Click the Person button** (purple icon with person silhouette)
 
+   > **Note:** Lusha's API expects a first name, last name, and company name to return accurate results. The extension automatically tries to detect the company name from the context near the selected name on the page. However, if the company name is not visible or detected correctly, the results may be inaccurate or missing. In such cases, use the **"Refine Search"** button to manually enter the person's company name and get more precise results.
+
 3. **View the results**:
    - Email addresses with quick email action
    - Phone numbers with WhatsApp integration
