@@ -1,26 +1,26 @@
 # 🔍 Lusha Contact Enrichment - Chrome Extension
 
-Chrome Extension שמאפשר לסמן שמות של אנשים בכל אתר ולהעשיר אותם עם נתונים מ-Lusha API - מייל, טלפון, חברה ותפקיד.
+A Chrome Extension that allows you to select names of people on any website and enrich them with data from Lusha API - email, phone, company, and position.
 
-## ✨ תכונות
+## ✨ Features
 
-- ✅ **חילוץ חכם של שם החברה מהדף** 🤖 (חדש!)
-  - Agent אוטומטי שמחלץ שם חברה מ-8 מקורות: Meta tags, כותרות, הקשר, LinkedIn ועוד
-  - לא צריך לסמן את שם החברה ידנית יותר!
-  - עובד על LinkedIn, אתרי חברות, בלוגים ועוד
-- ✅ סימון טקסט בכל אתר
-- ✅ כפתור צף ידידותי למשתמש
-- ✅ העשרת נתונים מ-Lusha API
-- ✅ הצגת: מייל, טלפון, חברה ותפקיד
-- ✅ ממשק עברי מלא
-- ✅ עיצוב מודרני ואלגנטי
-- ✅ תמיכה במצב כהה
+- ✅ **Smart Company Name Extraction from Page** 🤖 (New!)
+  - Automatic agent that extracts company name from 8 sources: Meta tags, titles, context, LinkedIn, and more
+  - No need to manually select the company name anymore!
+  - Works on LinkedIn, company websites, blogs, and more
+- ✅ Text selection on any website
+- ✅ User-friendly floating button
+- ✅ Data enrichment from Lusha API
+- ✅ Display of: email, phone, company, and position
+- ✅ Full English interface
+- ✅ Modern and elegant design
+- ✅ Dark mode support
 
-## 📦 התקנה
+## 📦 Installation
 
-### שלב 1: הורדת הקבצים
-1. שמור את כל הקבצים בתיקייה `chrome-extension`
-2. ודא שיש לך את כל הקבצים הבאים:
+### Step 1: Download the Files
+1. Save all files in the `chrome-extension` folder
+2. Make sure you have all the following files:
    ```
    chrome-extension/
    ├── manifest.json
@@ -29,7 +29,7 @@ Chrome Extension שמאפשר לסמן שמות של אנשים בכל אתר ו
    ├── content.js
    ├── content.css
    ├── background.js
-   ├── company-extractor.js  ← חדש! 🤖
+   ├── company-extractor.js  ← New! 🤖
    ├── icons/
    │   ├── icon16.png
    │   ├── icon48.png
@@ -37,79 +37,79 @@ Chrome Extension שמאפשר לסמן שמות של אנשים בכל אתר ו
    └── README.md
    ```
 
-### שלב 2: יצירת אייקונים
-1. פתח את הקובץ `icons/create-icons.html` בדפדפן
-2. לחץ על הכפתור "הורד את כל האייקונים"
-3. העתק את 3 הקבצים שירדו (icon16.png, icon48.png, icon128.png) לתיקייה `icons/`
+### Step 2: Create Icons
+1. Open the file `icons/create-icons.html` in browser
+2. Click the "Download all icons" button
+3. Copy the 3 downloaded files (icon16.png, icon48.png, icon128.png) to the `icons/` folder
 
-### שלב 3: טעינת ההרחבה ל-Chrome
-1. פתח את Chrome וגש ל: `chrome://extensions`
-2. הפעל את **"Developer mode"** (מצב מפתח) בפינה הימנית העליונה
-3. לחץ על **"Load unpacked"** (טען ארוז)
-4. בחר את התיקייה `chrome-extension`
-5. ההרחבה תופיע ברשימת ההרחבות שלך!
+### Step 3: Load the Extension to Chrome
+1. Open Chrome and go to: `chrome://extensions`
+2. Enable **"Developer mode"** in the top right corner
+3. Click on **"Load unpacked"**
+4. Select the `chrome-extension` folder
+5. The extension will appear in your extensions list!
 
-### שלב 4: הגדרת API Key
-1. לחץ על אייקון ההרחבה בסרגל הכלים של Chrome
-2. הזן את ה-API Key שלך מהאתר של Lusha
-3. לחץ על "שמור API Key"
+### Step 4: Set Up API Key
+1. Click on the extension icon in Chrome's toolbar
+2. Enter your API Key from Lusha's website
+3. Click "Save API Key"
 
-## 🚀 איך משתמשים?
+## 🚀 How to Use?
 
-### 🤖 מצב חכם (מומלץ!) - עם Smart Extraction
+### 🤖 Smart Mode (Recommended!) - with Smart Extraction
 
-1. **גש לאתר כלשהו** שיש בו שמות של אנשים (LinkedIn, אתר חברה, בלוג וכו')
-2. **סמן רק את השם** של האדם:
-   - ✅ "Yoni Tserruya" → ההרחבה תמצא "Lusha" אוטומטית!
-   - ✅ "Satya Nadella" → ההרחבה תמצא "Microsoft" מהדף!
-   - ✅ "Tim Cook" → ההרחבה תמצא "Apple" מה-meta tags!
-3. **כפתור Lusha יופיע** ליד הטקסט המסומן
-4. **לחץ על הכפתור** - ההרחבה תחלץ אוטומטית את שם החברה ותעשיר!
-5. **תקבל את המידע המלא:**
-   - 📧 כתובת מייל
-   - 📞 מספר טלפון
-   - 🏢 שם החברה
-   - 💼 תפקיד
+1. **Go to any website** that has names of people (LinkedIn, company website, blog, etc.)
+2. **Select only the name** of the person:
+   - ✅ "Yoni Tserruya" → The extension will find "Lusha" automatically!
+   - ✅ "Satya Nadella" → The extension will find "Microsoft" from the page!
+   - ✅ "Tim Cook" → The extension will find "Apple" from the meta tags!
+3. **Lusha button will appear** next to the selected text
+4. **Click the button** - The extension will automatically extract the company name and enrich!
+5. **You'll get the complete information:**
+   - 📧 Email address
+   - 📞 Phone number
+   - 🏢 Company name
+   - 💼 Position
 
-### 📝 מצב ידני (אם Smart Extraction לא מצא חברה)
+### 📝 Manual Mode (if Smart Extraction didn't find a company)
 
-אם ההרחבה לא הצליחה למצוא חברה, אפשר לסמן ידנית:
+If the extension couldn't find a company, you can select manually:
 - ✅ "Yoni Tserruya Lusha"
 - ✅ "John Doe Google"
 - ✅ "Jane Smith example.com"
 
-### 💡 איך Smart Extraction עובד?
+### 💡 How Does Smart Extraction Work?
 
-ה-Agent החכם מחפש שם חברה ב-8 מקורות:
+The smart agent searches for company name in 8 sources:
 1. **Meta Tags** (og:site_name, application-name)
-2. **כותרת הדף** (Page Title)
-3. **כותרות** (H1, H2)
-4. **הקשר** סביב השם ("John Doe at Google", "works at Microsoft")
+2. **Page Title**
+3. **Headings** (H1, H2)
+4. **Context** around the name ("John Doe at Google", "works at Microsoft")
 5. **LinkedIn** (company pages, profiles, posts)
 6. **Structured Data** (JSON-LD)
 7. **Domain** (lusha.com → "Lusha")
-8. **דפוסים נפוצים** ("CEO at...", "Director at...")
+8. **Common Patterns** ("CEO at...", "Director at...")
 
-📖 **למדריך מפורט:** ראה [SMART-EXTRACTION-GUIDE.md](SMART-EXTRACTION-GUIDE.md)
+📖 **For detailed guide:** See [SMART-EXTRACTION-GUIDE.md](SMART-EXTRACTION-GUIDE.md)
 
-## 🎨 צילומי מסך
+## 🎨 Screenshots
 
-### חלון הגדרות ה-API Key
+### API Key Settings Window
 ![Popup](screenshots/popup.png)
 
-### כפתור בפעולה
+### Button in Action
 ![Selection Button](screenshots/selection.png)
 
-### תוצאות העשרה
+### Enrichment Results
 ![Results](screenshots/results.png)
 
-## ⚙️ התאמה אישית של Lusha API
+## ⚙️ Custom Lusha API Configuration
 
-ברירת המחדל היא להשתמש ב-Lusha Person API. אם אתה משתמש בגרסת API אחרת של Lusha, ערוך את הקובץ [background.js](background.js) בשורות 15-30.
+The default is to use the Lusha Person API. If you're using a different version of Lusha API, edit the file [background.js](background.js) at lines 15-30.
 
-### דוגמאות לגרסאות API שונות:
+### Examples of Different API Versions:
 
-#### גרסה 1: Person API (ברירת מחדל)
+#### Version 1: Person API (Default)
 ```javascript
 const response = await fetch('https://api.lusha.com/person', {
   method: 'POST',
@@ -124,7 +124,7 @@ const response = await fetch('https://api.lusha.com/person', {
 });
 ```
 
-#### גרסה 2: Prospect API
+#### Version 2: Prospect API
 ```javascript
 const response = await fetch('https://api.lusha.com/v2/prospect', {
   method: 'POST',
@@ -138,7 +138,7 @@ const response = await fetch('https://api.lusha.com/v2/prospect', {
 });
 ```
 
-#### גרסה 3: Enrich API
+#### Version 3: Enrich API
 ```javascript
 const response = await fetch('https://api.lusha.com/enrich', {
   method: 'POST',
@@ -157,26 +157,26 @@ const response = await fetch('https://api.lusha.com/enrich', {
 });
 ```
 
-## 🔧 פתרון בעיות
+## 🔧 Troubleshooting
 
-### ההרחבה לא עובדת
-- ודא ש-API Key תקין ושמור
-- בדוק את ה-Console בדף (F12) לאיתור שגיאות
-- ודא שיש לך חיבור לאינטרנט
+### The Extension Doesn't Work
+- Make sure the API Key is valid and saved
+- Check the Console on the page (F12) to find errors
+- Make sure you have an internet connection
 
-### לא מוצא מידע
-- ודא שהשם מורכב מלפחות 2 מילים (שם פרטי + משפחה)
-- נסה להוסיף פרטים נוספים כמו שם חברה אם ידוע
-- בדוק שלא חרגת ממכסת ה-API שלך
+### Can't Find Information
+- Make sure the name consists of at least 2 words (first name + last name)
+- Try adding additional details like company name if known
+- Check that you haven't exceeded your API quota
 
-### הכפתור לא מופיע
-- ודא שסימנת טקסט שמכיל אותיות (לא רק מספרים)
-- נסה לרענן את הדף (F5)
-- בדוק שההרחבה מופעלת ב-chrome://extensions
+### The Button Doesn't Appear
+- Make sure you selected text that contains letters (not just numbers)
+- Try refreshing the page (F5)
+- Check that the extension is enabled at chrome://extensions
 
-## 📝 פורמט התשובה מ-Lusha API
+## 📝 Response Format from Lusha API
 
-ההרחבה מצפה לפורמט JSON הבא מ-Lusha:
+The extension expects the following JSON format from Lusha:
 
 ```json
 {
@@ -195,7 +195,7 @@ const response = await fetch('https://api.lusha.com/enrich', {
 }
 ```
 
-או:
+Or:
 
 ```json
 {
@@ -206,26 +206,26 @@ const response = await fetch('https://api.lusha.com/enrich', {
 }
 ```
 
-אם ה-API שלך מחזיר פורמט שונה, ערוך את [background.js:50-56](background.js#L50-L56).
+If your API returns a different format, edit [background.js:50-56](background.js#L50-L56).
 
-## 🛡️ אבטחה ופרטיות
+## 🛡️ Security and Privacy
 
-- ה-API Key נשמר **מקומית בדפדפן** ולא נשלח לשום שרת חיצוני
-- רק אתה רואה את ה-API Key שלך
-- כל הקריאות הן ישירות ל-Lusha API
-- ההרחבה לא אוספת שום מידע אישי
+- The API Key is saved **locally in the browser** and is not sent to any external server
+- Only you can see your API Key
+- All calls are directly to the Lusha API
+- The extension does not collect any personal information
 
-## 🤝 תמיכה
+## 🤝 Support
 
-אם יש לך שאלות או בעיות:
-1. בדוק את מדור **פתרון בעיות** למעלה
-2. צור Issue ב-GitHub
-3. פנה לתמיכה של Lusha לגבי שאלות על ה-API
+If you have questions or issues:
+1. Check the **Troubleshooting** section above
+2. Create an Issue on GitHub
+3. Contact Lusha support for API-related questions
 
-## 📄 רישיון
+## 📄 License
 
-MIT License - חופשי לשימוש ושינוי
+MIT License - Free to use and modify
 
-## 🎉 תודות
+## 🎉 Acknowledgments
 
-נבנה עם ❤️ עבור משתמשי Lusha
+Built with ❤️ for Lusha users
